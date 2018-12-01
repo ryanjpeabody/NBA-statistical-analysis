@@ -11,7 +11,7 @@ def player_season_stats(year):
     url = 'https://www.basketball-reference.com/leagues/NBA_' + str(year) + '_per_poss.html'
     
     # Define CSV name to be written
-    file_out = 'nba_' + str(year) + '_per_poss.csv'
+    file_out = '../../Data/nba_' + str(year) + '_per_poss.csv'
     
     # Create BeautifulSoup object
     r = requests.get(url)
@@ -32,6 +32,6 @@ def player_season_stats(year):
     # Write to CSV
     df.to_csv(file_out)
     
-for ii in range(1974, 2017):
+for ii in range(1974, 2019):
     player_season_stats(ii)
     print(str(ii) + ' done!')
